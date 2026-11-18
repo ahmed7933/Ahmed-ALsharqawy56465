@@ -5,13 +5,30 @@ const EMAIL = "mailto:alsharqawy.creative@gmail.com";
 const LINKEDIN = "https://linkedin.com/in/ahmed-alsharqawy-511a75238";
 
 const videos = {
-  threeD: ["PGeBNE1oydg", "XuGCHaZZtxY"],
-  ugc: ["voRJECxcNpU"],
-  cinematic: ["AIUSLDpLpSY"],
-  expert: ["8Se1ytPnnF4"],
+  threeD: [
+    { id: "PGeBNE1oydg", hook: "سيبوني، هتخلعوني من جدوري؟" },
+    { id: "XuGCHaZZtxY", hook: "البروتين كسرني. أنا محتاجة دكتور يرممني فوراً" },
+  ],
+  ugc: [
+    { id: "voRJECxcNpU", hook: "كنت خلاص هعمل أكبر غلطة في حياتي وأقصّه" },
+  ],
+  cinematic: [
+    { id: "AIUSLDpLpSY", hook: "No spoken hook - music-only cinematic cut" },
+  ],
+  expert: [
+    { id: "8Se1ytPnnF4", hook: "لو شعرك اتحرق من البروتين أو سحب اللون، أرجوكي وقفي أي تجارب عشوائية" },
+  ],
 };
 
-function VideoCard({ id, category }: { id: string; category: string }) {
+function VideoCard({
+  id,
+  category,
+  hook,
+}: {
+  id: string;
+  category: string;
+  hook: string;
+}) {
   return (
     <div className="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden">
       <div className="aspect-video">
@@ -25,8 +42,9 @@ function VideoCard({ id, category }: { id: string; category: string }) {
       </div>
       <div className="p-5 text-sm space-y-1">
         <p className="text-blue-400 font-semibold">Category: {category}</p>
-        <p className="text-gray-300">Hook: &quot;[opening line - to be added]&quot;</p>
-        <p className="text-gray-300">Result: [metric - to be added]</p>
+        <p className="text-gray-300" dir="auto">
+          Hook: &quot;{hook}&quot;
+        </p>
       </div>
     </div>
   );
@@ -337,15 +355,15 @@ export default function Portfolio() {
 
           <h4 className="text-xl font-bold mb-4 text-white">3D Character Hooks</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.threeD.map((id) => (
-              <VideoCard key={id} id={id} category="3D Character Hooks" />
+            {videos.threeD.map((v) => (
+              <VideoCard key={v.id} id={v.id} hook={v.hook} category="3D Character Hooks" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">AI UGC</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.ugc.map((id) => (
-              <VideoCard key={id} id={id} category="AI UGC" />
+            {videos.ugc.map((v) => (
+              <VideoCard key={v.id} id={v.id} hook={v.hook} category="AI UGC" />
             ))}
             <LocalVideoCard
               src="/tea-kharboush.mp4"
@@ -357,15 +375,15 @@ export default function Portfolio() {
 
           <h4 className="text-xl font-bold mb-4 text-white">Cinematic Product</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.cinematic.map((id) => (
-              <VideoCard key={id} id={id} category="Cinematic Product" />
+            {videos.cinematic.map((v) => (
+              <VideoCard key={v.id} id={v.id} hook={v.hook} category="Cinematic Product" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Expert</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.expert.map((id) => (
-              <VideoCard key={id} id={id} category="Expert" />
+            {videos.expert.map((v) => (
+              <VideoCard key={v.id} id={v.id} hook={v.hook} category="Expert" />
             ))}
           </div>
 
