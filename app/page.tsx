@@ -46,6 +46,45 @@ function PlaceholderSlot({ label }: { label: string }) {
   );
 }
 
+
+function LocalVideoCard({
+  src,
+  category,
+  hook,
+  result,
+  anchorId,
+}: {
+  src: string;
+  category: string;
+  hook: string;
+  result?: string;
+  anchorId?: string;
+}) {
+  return (
+    <div
+      id={anchorId}
+      className="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden scroll-mt-24"
+    >
+      <div className="bg-black flex items-center justify-center">
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          src={src}
+          className="w-full max-h-[540px] object-contain"
+        />
+      </div>
+      <div className="p-5 text-sm space-y-1">
+        <p className="text-blue-400 font-semibold">Category: {category}</p>
+        <p className="text-gray-300" dir="auto">
+          Hook: &quot;{hook}&quot;
+        </p>
+        {result ? <p className="text-gray-300">Result: {result}</p> : null}
+      </div>
+    </div>
+  );
+}
+
 export default function Portfolio() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -68,10 +107,11 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-900 text-white font-sans selection:bg-blue-500 selection:text-white">
       {/* 1. Hero */}
       <section className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-16 max-w-4xl mx-auto">
-        {/* [PHOTO: headshot of Ahmed, plain background, friendly expression] */}
-        <div className="w-28 h-28 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-3xl font-bold text-blue-400 mb-6">
-          AA
-        </div>
+        <img
+          src="/ahmed.jpg"
+          alt="Ahmed Alsharqawy"
+          className="w-28 h-28 rounded-full object-cover border border-gray-700 mb-6"
+        />
         <p className="text-blue-400 font-semibold tracking-wider text-sm uppercase mb-3">
           Performance Creative Strategist | Meta Ads + AI Video
         </p>
@@ -195,7 +235,7 @@ export default function Portfolio() {
             <ul className="list-disc list-inside text-gray-300 space-y-2 leading-relaxed mb-8">
               <li>12M+ EGP in gross sales at ~7x ROAS</li>
               <li>251 ads tested in this account view</li>
-              <li>Average hook rate: 32.12%. Best single ad: 51.96%.</li>
+              <li>Average hook rate: 32.12%. Best single ad: 51.98%.</li>
               <li>
                 Cost per messaging conversation: as low as 4.03 EGP (4.03-14.67
                 EGP across the top ads)
@@ -307,6 +347,12 @@ export default function Portfolio() {
             {videos.ugc.map((id) => (
               <VideoCard key={id} id={id} category="AI UGC" />
             ))}
+            <LocalVideoCard
+              src="/tea-kharboush.mp4"
+              category="AI UGC - Spec ad"
+              hook="لما الشغل يخربش يومك، ظبطها بشاي الخربوش."
+              anchorId="kharboush-tea"
+            />
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Cinematic Product</h4>
@@ -328,13 +374,22 @@ export default function Portfolio() {
             <PlaceholderSlot label="[Offers and Bundles video - to be added]" />
           </div>
 
-          {/* Winner vs loser pair - videos to be selected by Ahmed */}
           <span className="text-blue-400 font-semibold tracking-wider text-sm uppercase block mb-6">
             Same product. Two hooks.
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-            <PlaceholderSlot label="[Winner video - to be selected]" />
-            <PlaceholderSlot label="[Loser video - to be selected]" />
+            <LocalVideoCard
+              src="/winner.mp4"
+              category="Winner - Elokaby Pharmacy"
+              hook="عملتي بروتين ومكواة عشان تفرحي بشعرك؟"
+              result="Hook rate 51.98%. Cost per result: 4.03 EGP - best row in the account."
+            />
+            <LocalVideoCard
+              src="/loser.mp4"
+              category="Loser - Elokaby Pharmacy"
+              hook="سحبتي لون وصبغتي كتير لحد ما الكيماويات حرقت شعرك"
+              result="Hook rate 25.62%. Cost per result: 14.67 EGP - worst row in the account."
+            />
           </div>
           <p className="text-gray-400 text-sm">
             Same product, same budget. Different hook. This is why I test 15+
