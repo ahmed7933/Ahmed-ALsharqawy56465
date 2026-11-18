@@ -5,10 +5,10 @@ const EMAIL = "mailto:alsharqawy.creative@gmail.com";
 const LINKEDIN = "https://linkedin.com/in/ahmed-alsharqawy-511a75238";
 
 const videos = {
-  group1: ["8Se1ytPnnF4", "AIUSLDpLpSY"],
-  group2: ["PGeBNE1oydg"],
-  group3: ["XuGCHaZZtxY"],
-  group4: ["voRJECxcNpU"],
+  threeD: ["PGeBNE1oydg", "XuGCHaZZtxY"],
+  ugc: ["voRJECxcNpU"],
+  cinematic: ["AIUSLDpLpSY"],
+  expert: ["8Se1ytPnnF4"],
 };
 
 function VideoCard({ id, category }: { id: string; category: string }) {
@@ -297,30 +297,35 @@ export default function Portfolio() {
 
           <h4 className="text-xl font-bold mb-4 text-white">3D Character Hooks</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.group1.map((id) => (
+            {videos.threeD.map((id) => (
               <VideoCard key={id} id={id} category="3D Character Hooks" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">AI UGC</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.group2.map((id) => (
+            {videos.ugc.map((id) => (
               <VideoCard key={id} id={id} category="AI UGC" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Cinematic Product</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.group3.map((id) => (
+            {videos.cinematic.map((id) => (
               <VideoCard key={id} id={id} category="Cinematic Product" />
+            ))}
+          </div>
+
+          <h4 className="text-xl font-bold mb-4 text-white">Expert</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {videos.expert.map((id) => (
+              <VideoCard key={id} id={id} category="Expert" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Offers and Bundles</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {videos.group4.map((id) => (
-              <VideoCard key={id} id={id} category="Offers and Bundles" />
-            ))}
+            <PlaceholderSlot label="[Offers and Bundles video - to be added]" />
           </div>
 
           {/* Winner vs loser pair - videos to be selected by Ahmed */}
