@@ -50,21 +50,6 @@ function VideoCard({
   );
 }
 
-function PlaceholderSlot({ label }: { label: string }) {
-  return (
-    <div className="bg-gray-800 rounded-2xl border border-dashed border-gray-600 overflow-hidden">
-      <div className="aspect-video flex items-center justify-center text-gray-500 text-sm px-6 text-center">
-        {label}
-      </div>
-      <div className="p-5 text-sm space-y-1">
-        <p className="text-gray-300">Hook: &quot;[opening line - to be added]&quot;</p>
-        <p className="text-gray-300">Result: [metric - to be added]</p>
-      </div>
-    </div>
-  );
-}
-
-
 function LocalVideoCard({
   src,
   category,
@@ -387,23 +372,20 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <h4 className="text-xl font-bold mb-4 text-white">Offers and Bundles</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <PlaceholderSlot label="[Offers and Bundles video - to be added]" />
-          </div>
-
           <span className="text-blue-400 font-semibold tracking-wider text-sm uppercase block mb-6">
             Same product. Two hooks.
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <LocalVideoCard
               src="/winner.mp4"
+              anchorId="winner-video"
               category="Winner - Elokaby Pharmacy"
               hook="عملتي بروتين ومكواة عشان تفرحي بشعرك؟"
               result="Hook rate 51.98%. Cost per result: 4.03 EGP - best row in the account."
             />
             <LocalVideoCard
               src="/loser.mp4"
+              anchorId="loser-video"
               category="Loser - Elokaby Pharmacy"
               hook="سحبتي لون وصبغتي كتير لحد ما الكيماويات حرقت شعرك"
               result="Hook rate 25.62%. Cost per result: 14.67 EGP - worst row in the account."
@@ -579,4 +561,4 @@ export default function Portfolio() {
       </footer>
     </div>
   );
-}
+              }
