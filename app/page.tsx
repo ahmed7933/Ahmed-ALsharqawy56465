@@ -6,63 +6,62 @@ const WHATSAPP_HELLO =
 const EMAIL = "mailto:alsharqawy.creative@gmail.com";
 const LINKEDIN = "https://linkedin.com/in/ahmed-alsharqawy-511a75238";
 
-const videos = {
+const ads = {
   threeD: [
-    { id: "PGeBNE1oydg", hook: "سيبوني، هتخلعوني من جدوري؟" },
-    { id: "XuGCHaZZtxY", hook: "البروتين كسرني. أنا محتاجة دكتور يرممني فوراً" },
+    {
+      src: "/3d-hooks-1.mp4",
+      poster: "/3d-hooks-1.jpg",
+      hook: "سيبوني، هتخلعوني من جدوري؟",
+      role: "Cold-traffic pattern-interrupt hook - a 3D story that dramatizes daily hair damage before the serum appears.",
+    },
+    {
+      src: "/3d-hooks-2.mp4",
+      poster: "/3d-hooks-2.jpg",
+      hook: "البروتين كسرني. أنا محتاجة دكتور يرممني فوراً",
+      role: "Problem-agitation hook that leads into a limited-offer consultation CTA.",
+    },
   ],
   ugc: [
-    { id: "voRJECxcNpU", hook: "كنت خلاص هعمل أكبر غلطة في حياتي وأقصّه" },
+    {
+      src: "/ai-ugc.mp4",
+      poster: "/ai-ugc.jpg",
+      hook: "كنت خلاص هعمل أكبر غلطة في حياتي وأقصّه",
+      role: "Relatable UGC story angle that builds trust and routes viewers to a specialist consultation.",
+    },
   ],
   cinematic: [
-    { id: "AIUSLDpLpSY", hook: "No spoken hook - music-only cinematic cut" },
+    {
+      src: "/cinematic-product.mp4",
+      poster: "/cinematic-product.jpg",
+      hook: "No spoken hook - music-only cinematic cut",
+      role: "Cinematic brand film for desire and brand recall around the product line.",
+    },
   ],
   expert: [
-    { id: "8Se1ytPnnF4", hook: "لو شعرك اتحرق من البروتين أو سحب اللون، أرجوكي وقفي أي تجارب عشوائية" },
+    {
+      src: "/expert.mp4",
+      poster: "/expert.jpg",
+      hook: "لو شعرك اتحرق من البروتين أو سحب اللون، أرجوكي وقفي أي تجارب عشوائية",
+      role: "Expert authority angle that handles skepticism toward random hair experiments.",
+    },
   ],
 };
-
-function VideoCard({
-  id,
-  category,
-  hook,
-}: {
-  id: string;
-  category: string;
-  hook: string;
-}) {
-  return (
-    <div className="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden">
-      <div className="aspect-video">
-        <iframe
-          className="w-full h-full"
-          src={`https://www.youtube.com/embed/${id}?rel=0`}
-          title={category}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-      <div className="p-5 text-sm space-y-1">
-        <p className="text-blue-400 font-semibold">Category: {category}</p>
-        <p className="text-gray-300" dir="auto">
-          Hook: &quot;{hook}&quot;
-        </p>
-      </div>
-    </div>
-  );
-}
 
 function LocalVideoCard({
   src,
   category,
   hook,
   result,
+  role,
+  poster,
   anchorId,
 }: {
   src: string;
   category: string;
   hook: string;
   result?: string;
+  role?: string;
+  poster?: string;
   anchorId?: string;
 }) {
   return (
@@ -76,6 +75,7 @@ function LocalVideoCard({
           playsInline
           preload="metadata"
           src={src}
+          poster={poster}
           className="w-full max-h-[540px] object-contain"
         />
       </div>
@@ -84,6 +84,7 @@ function LocalVideoCard({
         <p className="text-gray-300" dir="auto">
           Hook: &quot;{hook}&quot;
         </p>
+        {role ? <p className="text-gray-300">Role/Goal: {role}</p> : null}
         {result ? <p className="text-gray-300">Result: {result}</p> : null}
       </div>
     </div>
@@ -345,6 +346,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <LocalVideoCard
               src="/winner.mp4"
+              poster="/winner.jpg"
               anchorId="winner-video"
               category="Winner - Alokaby Pharmacy"
               hook="عملتي بروتين ومكواة عشان تفرحي بشعرك؟"
@@ -352,6 +354,7 @@ export default function Portfolio() {
             />
             <LocalVideoCard
               src="/loser.mp4"
+              poster="/loser.jpg"
               anchorId="loser-video"
               category="Loser - Alokaby Pharmacy"
               hook="سحبتي لون وصبغتي كتير لحد ما الكيماويات حرقت شعرك"
@@ -365,29 +368,29 @@ export default function Portfolio() {
 
           <h4 className="text-xl font-bold mb-4 text-white">3D Character Hooks</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.threeD.map((v) => (
-              <VideoCard key={v.id} id={v.id} hook={v.hook} category="3D Character Hooks" />
+            {ads.threeD.map((v) => (
+              <LocalVideoCard key={v.src} src={v.src} poster={v.poster} hook={v.hook} role={v.role} category="3D Character Hooks" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">AI UGC</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.ugc.map((v) => (
-              <VideoCard key={v.id} id={v.id} hook={v.hook} category="AI UGC" />
+            {ads.ugc.map((v) => (
+              <LocalVideoCard key={v.src} src={v.src} poster={v.poster} hook={v.hook} role={v.role} category="AI UGC" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Cinematic Product</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.cinematic.map((v) => (
-              <VideoCard key={v.id} id={v.id} hook={v.hook} category="Cinematic Product" />
+            {ads.cinematic.map((v) => (
+              <LocalVideoCard key={v.src} src={v.src} poster={v.poster} hook={v.hook} role={v.role} category="Cinematic Product" />
             ))}
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Expert</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {videos.expert.map((v) => (
-              <VideoCard key={v.id} id={v.id} hook={v.hook} category="Expert" />
+            {ads.expert.map((v) => (
+              <LocalVideoCard key={v.src} src={v.src} poster={v.poster} hook={v.hook} role={v.role} category="Expert" />
             ))}
           </div>
 
@@ -396,6 +399,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <LocalVideoCard
               src="/tea-kharboush.mp4"
+              poster="/tea-kharboush.jpg"
               category="Concept - spec ad (no ad spend)"
               hook="لما الشغل يخربش يومك، ظبطها بشاي الخربوش."
               anchorId="kharboush-tea"
@@ -582,4 +586,4 @@ export default function Portfolio() {
       </footer>
     </div>
   );
-              }
+}
