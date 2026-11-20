@@ -240,7 +240,7 @@ export default function Portfolio() {
             <ul className="list-disc list-inside text-gray-300 space-y-2 leading-relaxed mb-8">
               <li>12M+ EGP in gross sales at ~7x ROAS</li>
               <li>251 ads tested in this account view</li>
-              <li>Average hook rate: 32.12%. Best single ad: 51.98%.</li>
+              <li>Average hook rate: 32.12%. Best single ad: 51.96%.</li>
               <li>
                 Cost per messaging conversation: as low as 4.03 EGP (4.03-14.67
                 EGP across the top ads)
@@ -348,7 +348,7 @@ export default function Portfolio() {
               anchorId="winner-video"
               category="Winner - Alokaby Pharmacy"
               hook="عملتي بروتين ومكواة عشان تفرحي بشعرك؟"
-              result="Hook rate 51.98%. Cost per result: 4.03 EGP - best row in the account."
+              result="Hook rate 51.96%. Cost per result: 4.03 EGP - best row in the account."
             />
             <LocalVideoCard
               src="/loser.mp4"
