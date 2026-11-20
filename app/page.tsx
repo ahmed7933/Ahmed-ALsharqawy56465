@@ -1,6 +1,8 @@
 "use client";
 
 const WHATSAPP = "https://wa.me/201017854522";
+const WHATSAPP_HELLO =
+  "https://wa.me/201017854522?text=Hi%20Ahmed%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20working%20together";
 const EMAIL = "mailto:alsharqawy.creative@gmail.com";
 const LINKEDIN = "https://linkedin.com/in/ahmed-alsharqawy-511a75238";
 
@@ -116,7 +118,7 @@ export default function Portfolio() {
           className="w-28 h-28 rounded-full object-cover border border-gray-700 mb-6"
         />
         <p className="text-blue-400 font-semibold tracking-wider text-sm uppercase mb-3">
-          Performance Creative Strategist | Meta Ads + AI Video
+          Performance Media Buyer &amp; AI Creative Strategist
         </p>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           Ahmed Alsharqawy
@@ -134,7 +136,7 @@ export default function Portfolio() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href={WHATSAPP}
+            href={WHATSAPP_HELLO}
             target="_blank"
             rel="noreferrer"
             className="px-6 py-3 bg-green-600 hover:bg-green-700 transition rounded-full font-semibold"
@@ -164,8 +166,8 @@ export default function Portfolio() {
           </a>
         </div>
         <p className="text-sm text-gray-500 mt-8">
-          Remote. Based in Egypt. Running campaigns across Egypt, Oman, Iraq and
-          Libya.
+          Remote. Based in Egypt. Open to roles and projects across Egypt and the
+          GCC. Campaign experience in Egypt, Oman, Iraq and Libya.
         </p>
       </section>
 
@@ -187,25 +189,25 @@ export default function Portfolio() {
           <div>
             <p className="text-3xl font-extrabold text-blue-400">48-72h</p>
             <p className="text-sm text-gray-400 mt-1">
-              per AI video ad, at 80%+ lower production cost
+              per AI video ad
             </p>
           </div>
         </div>
       </section>
 
-      {/* 3. Case study: Elokaby Pharmacy */}
+      {/* 3. Case study: Alokaby Pharmacy */}
       <section className="py-20 max-w-6xl mx-auto px-6">
         <span className="text-blue-400 font-semibold tracking-wider text-sm uppercase block mb-2">
-          Case study: Elokaby Pharmacy
+          Case study: Alokaby Pharmacy
         </span>
         <h3 className="text-3xl md:text-4xl font-bold mb-8">
-          Scaling Elokaby Pharmacy to 12M+ EGP in sales
+          Scaling Alokaby Pharmacy to 12M+ EGP in sales
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h4 className="text-xl font-bold mb-3 text-white">The problem</h4>
             <p className="text-gray-300 leading-relaxed mb-8">
-              Elokaby Pharmacy sells customized hair care and medical cosmetics
+              Alokaby Pharmacy sells customized hair care and medical cosmetics
               packages. Prices are high, so buyers are skeptical. Video
               production was slow and expensive, ads went stale, and costs
               climbed.
@@ -219,7 +221,7 @@ export default function Portfolio() {
               </li>
               <li>
                 Built an AI video engine: 3D, cinematic and UGC-style ad assets
-                in 48-72 hours, at over 80% lower production cost.
+                in 48-72 hours.
               </li>
               <li>
                 Tested bundles and offers to raise average order value and
@@ -246,13 +248,13 @@ export default function Portfolio() {
             </ul>
             <img
               src="/case-study.png"
-              alt="Live Ads Manager view from the Elokaby account"
+              alt="Live Ads Manager view from the Alokaby account"
               className="rounded-2xl border border-gray-700 w-full"
             />
             <p className="text-sm text-gray-500 mt-3 leading-relaxed">
-              Live Ads Manager view from the Elokaby account (names blurred in
+              Live Ads Manager view from the Alokaby account (names blurred in
               the screenshot itself). The total spend shown (485,497 EGP) is one
-              account view - part of the full 1.7M+ EGP managed for Elokaby
+              account view - part of the full 1.7M+ EGP managed for Alokaby
               Pharmacy.
             </p>
           </div>
@@ -300,12 +302,11 @@ export default function Portfolio() {
           Ad-ready video in 48-72 hours
         </h3>
         <p className="text-gray-400 mb-10">
-          An in-house pipeline that replaces a production crew. Over 80% lower
-          cost per asset.
+          An in-house pipeline that replaces a production crew.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {[
-            ["Hook and script", "direct-response copy, built from performance data.", "ChatGPT"],
+            ["Hook and script", "direct-response copy, built from performance data.", "Ad account data + direct-response frameworks"],
             ["Visuals", "product shots and scenes.", "Midjourney"],
             ["Motion", "3D and cinematic video.", "Kling, Runway Gen-3, Luma Dream Machine"],
             ["Voice", "natural Arabic and English voiceover.", "ElevenLabs"],
@@ -331,11 +332,35 @@ export default function Portfolio() {
             Selected work
           </span>
           <h3 className="text-3xl md:text-4xl font-bold mb-3">
-            Videos that carried real budgets
+            Creative and results
           </h3>
           <p className="text-gray-400 mb-12">
-            Every ad below ran with real spend. Labels say what it was and what
-            it did.
+            Live performance ads backed by real budgets, plus select creative
+            concepts showing format range.
+          </p>
+
+          <span className="text-blue-400 font-semibold tracking-wider text-sm uppercase block mb-6">
+            Same product. Two hooks.
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+            <LocalVideoCard
+              src="/winner.mp4"
+              anchorId="winner-video"
+              category="Winner - Alokaby Pharmacy"
+              hook="عملتي بروتين ومكواة عشان تفرحي بشعرك؟"
+              result="Hook rate 51.98%. Cost per result: 4.03 EGP - best row in the account."
+            />
+            <LocalVideoCard
+              src="/loser.mp4"
+              anchorId="loser-video"
+              category="Loser - Alokaby Pharmacy"
+              hook="سحبتي لون وصبغتي كتير لحد ما الكيماويات حرقت شعرك"
+              result="Hook rate 25.62%. Cost per result: 14.67 EGP - worst row in the account."
+            />
+          </div>
+          <p className="text-gray-400 text-sm">
+            Same product, same budget. Different hook. This is why I test 15+
+            variants every week.
           </p>
 
           <h4 className="text-xl font-bold mb-4 text-white">3D Character Hooks</h4>
@@ -350,12 +375,6 @@ export default function Portfolio() {
             {videos.ugc.map((v) => (
               <VideoCard key={v.id} id={v.id} hook={v.hook} category="AI UGC" />
             ))}
-            <LocalVideoCard
-              src="/tea-kharboush.mp4"
-              category="AI UGC - Spec ad"
-              hook="لما الشغل يخربش يومك، ظبطها بشاي الخربوش."
-              anchorId="kharboush-tea"
-            />
           </div>
 
           <h4 className="text-xl font-bold mb-4 text-white">Cinematic Product</h4>
@@ -372,29 +391,16 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <span className="text-blue-400 font-semibold tracking-wider text-sm uppercase block mb-6">
-            Same product. Two hooks.
-          </span>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+
+          <h4 className="text-xl font-bold mb-4 text-white">Concept work (spec, no ad spend)</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <LocalVideoCard
-              src="/winner.mp4"
-              anchorId="winner-video"
-              category="Winner - Elokaby Pharmacy"
-              hook="عملتي بروتين ومكواة عشان تفرحي بشعرك؟"
-              result="Hook rate 51.98%. Cost per result: 4.03 EGP - best row in the account."
-            />
-            <LocalVideoCard
-              src="/loser.mp4"
-              anchorId="loser-video"
-              category="Loser - Elokaby Pharmacy"
-              hook="سحبتي لون وصبغتي كتير لحد ما الكيماويات حرقت شعرك"
-              result="Hook rate 25.62%. Cost per result: 14.67 EGP - worst row in the account."
+              src="/tea-kharboush.mp4"
+              category="Concept - spec ad (no ad spend)"
+              hook="لما الشغل يخربش يومك، ظبطها بشاي الخربوش."
+              anchorId="kharboush-tea"
             />
           </div>
-          <p className="text-gray-400 text-sm">
-            Same product, same budget. Different hook. This is why I test 15+
-            variants every week.
-          </p>
         </div>
       </section>
 
@@ -451,10 +457,25 @@ export default function Portfolio() {
               ChatGPT, CapCut
             </p>
           </div>
-          <div className="md:col-span-2">
-            <h4 className="font-bold text-white mb-2">Also</h4>
-            <p className="text-gray-400">TikTok Ads Manager (small-budget tests)</p>
-          </div>
+        </div>
+      </section>
+
+      {/* 8b. How we can work together */}
+      <section className="py-20 max-w-6xl mx-auto px-6">
+        <span className="text-blue-400 font-semibold tracking-wider text-sm uppercase block mb-2">
+          How we can work together
+        </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          {[
+            ["Remote role (full-time or part-time)", "Performance Media Buyer & Creative Strategist for e-commerce brands and agencies in Egypt and the GCC."],
+            ["72-hour AI video ad sprint", "3 performance-ready video ads (hooks, scripts, AI visuals or UGC-style, voiceover and edits) ready to launch in Meta Ads."],
+            ["Freelance or white-label Meta Ads", "Hands-on campaign management, weekly creative testing (15+ variants) and ROAS and CPO optimization."],
+          ].map(([title, desc]) => (
+            <div key={title} className="p-6 bg-gray-800 rounded-2xl border border-gray-700">
+              <h4 className="font-bold mb-2">{title}</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -477,7 +498,7 @@ export default function Portfolio() {
               Download my CV
             </a>{" "}
             or message me on{" "}
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">
+            <a href={WHATSAPP_HELLO} target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">
               WhatsApp
             </a>{" "}
             or{" "}
@@ -552,7 +573,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="text-center p-8 text-gray-500 text-sm bg-black space-y-2">
         <p className="text-gray-400 font-semibold">
-          Ahmed Alsharqawy - Performance Creative Strategist
+          Ahmed Alsharqawy - Performance Media Buyer &amp; AI Creative Strategist
         </p>
         <p>
           WhatsApp: wa.me/201017854522 | Email: alsharqawy.creative@gmail.com |
